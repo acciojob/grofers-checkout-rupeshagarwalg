@@ -4,7 +4,7 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
   // Select all price cells
-  const prices = document.querySelectorAll(".prices");
+  const prices = document.querySelectorAll(".price");
 
   let total = 0;
 
@@ -18,8 +18,9 @@ const getSum = () => {
 
   // Create one cell that spans both columns
   const totalCell = document.createElement("td");
-  totalCell.colSpan = 2; // span across both columns
+  totalCell.colSpan = 2;
   totalCell.textContent = `Total Price: Rs ${total}`;
+  totalCell.id = "ans"; // <-- ADD THIS for Cypress test to find total
 
   // Append cell to row
   newRow.appendChild(totalCell);
